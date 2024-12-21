@@ -8,7 +8,7 @@ gem "propshaft"
 # gem "sqlite3", ">= 2.1"
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -45,7 +45,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # devise certification
-gem 'devise'
+gem "devise"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -58,7 +58,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   #  rspec-rails
-  gem 'rspec-rails'
+  gem "rspec-rails"
 end
 
 group :development do
@@ -70,6 +70,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'factory_bot_rails'
-  gem 'webdrivers'
+  gem "factory_bot_rails"
+  gem "webdrivers"
 end
