@@ -16,7 +16,6 @@ RSpec.describe "cards/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", card_path(card), "post" do
-
       assert_select "textarea[name=?]", "card[card_text]"
 
       assert_select "input[name=?]", "card[card_flag]"
