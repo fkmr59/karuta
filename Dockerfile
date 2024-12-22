@@ -17,9 +17,13 @@ FROM ruby:3.3.6
 WORKDIR /karuta
 
 # Install base packages
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+#RUN apt-get update -qq && \
+#    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
+#    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN apt-get update && \
+    apt-get install -y nodejs postgresql-client --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set production environment
 #ENV RAILS_ENV="production" \
