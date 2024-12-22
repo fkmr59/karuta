@@ -51,6 +51,9 @@ RUN gem install bundler && \
 # Copy application code
 #COPY . .
 
+## Setting the PATH environment variable
+ENV PATH="/usr/local/bundle/bin:${PATH}"
+
 # Precompile bootsnap code for faster boot times
 #RUN bundle exec bootsnap precompile app/ lib/
 
