@@ -10,8 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_22_143313) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "cards", force: :cascade do |t|
+    t.text "card_text"
+    t.integer "card_flag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
