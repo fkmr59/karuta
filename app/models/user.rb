@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # enum role: { general: 0, admin: 1 }
+
   has_one :scores, dependent: :destroy
   has_one :user_matches, dependent: :destroy
 end
