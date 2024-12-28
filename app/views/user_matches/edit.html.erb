@@ -1,0 +1,12 @@
+<% content_for :title, "Editing user match" %>
+
+<h1>Editing user match</h1>
+
+<%= render "form", user_match: @user_match %>
+
+<br>
+
+<div>
+  <%= link_to "Show this user match", @user_match %> |
+  <%= link_to "Back to user matches", user_matches_path %>
+</div>
