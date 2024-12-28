@@ -16,7 +16,6 @@ RSpec.describe "scores/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", score_path(score), "post" do
-
       assert_select "input[name=?]", "score[user_id_id]"
 
       assert_select "input[name=?]", "score[point]"
