@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :scores, dependent: :destroy
+  has_one :user_matches, dependent: :destroy
 end

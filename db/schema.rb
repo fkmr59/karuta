@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_28_072039) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_28_075042) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -37,6 +37,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_28_072039) do
     t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
+  create_table "user_matches", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "match_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_user_matches_on_match_id"
+    t.index ["user_id"], name: "index_user_matches_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -50,4 +59,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_28_072039) do
   end
 
   add_foreign_key "scores", "users"
+  add_foreign_key "user_matches", "matches"
+  add_foreign_key "user_matches", "users"
 end
