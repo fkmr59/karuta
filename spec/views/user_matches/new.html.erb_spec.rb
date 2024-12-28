@@ -12,7 +12,6 @@ RSpec.describe "user_matches/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", user_matches_path, "post" do
-
       assert_select "input[name=?]", "user_match[user_id]"
 
       assert_select "input[name=?]", "user_match[match_id]"

@@ -16,7 +16,6 @@ RSpec.describe "user_matches/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", user_match_path(user_match), "post" do
-
       assert_select "input[name=?]", "user_match[user_id]"
 
       assert_select "input[name=?]", "user_match[match_id]"
