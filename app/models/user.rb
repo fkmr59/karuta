@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: { general: 0, admin: 1 }, _default: :general
+  enum role: { general: 0, admin: 1 }
 
   has_one :score, dependent: :destroy
   has_one :user_match, dependent: :destroy
