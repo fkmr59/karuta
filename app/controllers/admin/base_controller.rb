@@ -1,14 +1,14 @@
 class Admin::BaseController < ApplicationController
-  # before_action :authenticate_user!
-  # before_action :check_admin
+  before_action :authenticate_user!
+  before_action :check_admin
 
-  # private
+  private
 
-  # def check_admin
-  #   unless current_user&.admin?
-  #     redirect_to root_path, alert: "権限がありません。"
-  #   end
-  # end
+  def check_admin
+    unless current_user&.admin?
+      redirect_to root_path, alert: "権限がありません。"
+    end
+  end
 
   layout "admin"
 end
