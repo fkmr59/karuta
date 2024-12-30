@@ -10,21 +10,24 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    # devise_for :users
-    devise_scope :user do
-      get "/register", to: "users/registrations#new"
-      post "/register", to: "users/registrations#create"
+      # devise_for :users
+      # devise_scope :user do
+      # get "/register", to: "devise/registrations#new"
+      # post "/register", to: "devise/registrations#create"
 
-      get "/login", to: "users/sessions#new"
-      post "/login", to: "users/sessions#create"
-      delete "/logout", to: "users/sessions#destroy"
-    end
+      # get "/login", to: "devise/sessions#new"
+      # post "/login", to: "devise/sessions#create"
+      # delete "/logout", to: "devise/sessions#destroy"
+
+      resources :dashboard, only: [ :index ]
+      root to: "dashboard#index"
+    # end
   end
 
-  namespace :admin do
-    resources :dashboard, only: [ :index ]
-    root to: "dashboard#index"
-  end
+  # namespace :admin do
+  #   resources :dashboard, only: [ :index ]
+  #   root to: "dashboard#index"
+  # end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
