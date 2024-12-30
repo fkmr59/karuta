@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :cards
   devise_for :users
 
+  devise_scope :user do
+    get "/users/sign_out" => "devise/sessions#destroy"
+  end
+
   namespace :admin do
     # devise_for :users
     devise_scope :user do
