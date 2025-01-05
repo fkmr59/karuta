@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+<%#   <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %> <%# admin.css を読み込む %>
+  <%# <%= javascript_importmap_tags %> %> %>
+</head>
+<body>
+  <header>
+    <%= render "layouts/header" %>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <%= render "layouts/footer" %>
+  </footer>
+</body>
+</html>

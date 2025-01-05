@@ -1,0 +1,11 @@
+<h1>Admin Panel</h1>
+<nav>
+  <ul>
+    <li><%= link_to "Dashboard", admin_root_path %></li>
+    <li><%= link_to "Users", admin_users_path %></li>
+    <li><%#= link_to "Products", admin_products_path %></li>
+    <%# 他の管理メニューを追加 %>
+    <li><%#= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to 'Logout', admin_logout_path %></li>
+  </ul>
+</nav>
