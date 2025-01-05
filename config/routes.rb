@@ -16,11 +16,13 @@ Rails.application.routes.draw do
 
       get "/login", to: "sessions#new"
       post "/login", to: "sessions#create"
-      delete "/logout", to: "sessions#destroy"
+      get "/logout", to: "sessions#destroy"
+      # delete "/logout", to: "sessions#destroy", as: :destroy_admin_user_session
 
       resources :dashboard, only: [ :index ]
       root to: "dashboard#index"
     end
+    resources :users
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -5,12 +5,12 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %> <%# admin.css を読み込む %>
-  <%= javascript_importmap_tags %>
+<%#   <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %> <%# admin.css を読み込む %>
+  <%# <%= javascript_importmap_tags %> %> %>
 </head>
 <body>
   <header>
-    <%= render "admin/layouts/header" %>
+    <%= render "layouts/header" %>
   </header>
 
   <main>
@@ -18,7 +18,7 @@
   </main>
 
   <footer>
-    <%= render "admin/layouts/footer" %>
+    <%= render "layouts/footer" %>
   </footer>
 </body>
 </html>
